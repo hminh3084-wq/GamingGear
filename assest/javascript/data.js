@@ -18,7 +18,7 @@ const products = [
         brand: 'LENOVO',
         price: '52.990.000đ',
         oldPrice: '54.990.000đ',
-        img: '/assest/img/lap2.png',
+        img: './assest/img/lap2.png',
         category: 'laptop',
         desc: `Laptop Gaming Lenovo Legion 5 15IRX10 83LY004GVN là một trong những sản phẩm nổi bật 
         trong dòng laptop gaming của Lenovo, với hiệu suất mạnh mẽ và thiết kế tinh tế. Bài viết này 
@@ -30,7 +30,7 @@ const products = [
         brand: 'ACER',
         price: '34.990.000đ',
         oldPrice: '38.990.000đ',
-        img: '/assest/img/lap3.png',
+        img: './assest/img/lap3.png',
         category: 'laptop',
         desc: `Nếu bạn đang cần một chiếc laptop gaming cân bằng tốt giữa hiệu năng, chất lượng hiển thị và khả năng 
         tản nhiệt, Acer Nitro ProPanel ANV15-52-72BM là lựa chọn rất đáng xem xét. Máy phù hợp cho cả nhu cầu chơi 
@@ -45,7 +45,7 @@ const products = [
         brand: 'GIGABYTE',
         price: '27.990.000đ',
         oldPrice: '29.790.000đ',
-        img: '/assest/img/lap4.png',
+        img: './assest/img/lap4.png',
         category: 'laptop',
         desc: `GIGABYTE luôn giữ chỗ đứng lớn trong lòng của mọi game thủ khi mang đến những sản phẩm 
         chất lượng cả về ngoại hình lẫn giá thành trên nhiều series khác nhau như AORUS, AERO. Đặc biệt,
@@ -59,7 +59,7 @@ const products = [
         brand: 'MSI',
         price: '34.490.000đ',
         oldPrice: '38.790.000đ',
-        img: '/assest/img/lap5.png',
+        img: './assest/img/lap5.png',
         category: 'laptop',
         desc: `Laptop gaming MSI Katana 15 HX B14WEK 295VN là một sự lựa chọn xuất sắc cho những ai đang tìm kiếm 
         một chiếc laptop mạnh mẽ, thiết kế đẹp và khả năng chơi game tốt. Với những tính năng nổi bật từ bộ vi xử lý, 
@@ -73,7 +73,7 @@ const products = [
         brand: 'LENOVO',
         price: '35.490.000đ',
         oldPrice: '37.790.000đ',
-        img: '/assest/img/lap6.png',
+        img: './assest/img/lap6.png',
         category: 'laptop',
         desc: `Laptop Lenovo LOQ 15IRX10 83JE00PEVN sở hữu hiệu năng vượt trội với CPU Intel Core i7-13650HX, GPU 
         NVIDIA GeForce RTX 5050 8GB, 16GB RAM và 512GB SSD. Màn hình 15.6 inch FHD 144Hz với tấm nền IPS, cho chất 
@@ -86,7 +86,7 @@ const products = [
         brand: 'LG',
         price: '16.500.000đ',
         oldPrice: '17.790.000đ',
-        img: '/assest/img/lap7.png',
+        img: './assest/img/lap7.png',
         category: 'laptop',
         desc: `Laptop LG Gram Book 15U50T-G.AV56A5 sở hữu màn hình IPS 15.6 inch độ phân giải Full HD, RAM 16GB DDR4 
         Dual Channel cùng ổ cứng SSD Gen4 512GB. Máy sử dụng vi xử lý Intel Core i5-1334U thế hệ thứ 13 (10 nhân, 
@@ -99,7 +99,7 @@ const products = [
         brand: 'GAMING',
         price: '25.990.000đ',
         oldPrice: '28.580.000đ',
-        img: '/assest/img/pc1.jpg',
+        img: './assest/img/pc1.jpg',
         category: 'pc',
         specs: {
             'Mainboard': 'Mainboard GIGABYTE B760M GAMING PLUS WIFI DDR4',
@@ -119,7 +119,7 @@ const products = [
         brand: 'GAMING',
         price: '21.990.000đ',
         oldPrice: '24.020.000đ',
-        img: '/assest/img/pc2.jpg',
+        img: './assest/img/pc2.jpg',
         category: 'pc',
         specs: {
             'Mainboard': 'Bo mạch chủ GIGABYTE B760M D DDR4',
@@ -138,7 +138,7 @@ const products = [
         brand: 'GAMING',
         price: '66.990.000đ',
         oldPrice: '67.420.000đ',
-        img: '/assest/img/pc3.jpg',
+        img: './assest/img/pc3.jpg',
         category: 'pc',
         specs: {
             'Mainboard': 'Bo mạch chủ MSI Z890 GAMING PLUS WIFI(DDR5)',
@@ -158,7 +158,7 @@ const products = [
         brand: 'GAMING',
         price: '128.990.000đ',
         oldPrice: '139.790.000đ',
-        img: '/assest/img/pc4.png',
+        img: './assest/img/pc4.png',
         category: 'pc',
         specs: {
             'Mainboard': 'Bo mạch chủ ASUS ROG Strix X870E- H Gaming Hatsune Miku Edition',
@@ -178,7 +178,7 @@ const products = [
         brand: 'GAMING',
         price: '233.990.000đ',
         oldPrice: '252.290.000đ',
-        img: '/assest/img/pc5.png',
+        img: './assest/img/pc5.png',
         category: 'pc',
         specs: {
             'Mainboard': 'Mainboard ASUS ROG CROSSHAIR X870E EXTREME (DDR5)',
@@ -198,7 +198,7 @@ const products = [
         brand: 'GAMING',
         price: '31.590.000đ',
         oldPrice: '33.120.000đ',
-        img: '/assest/img/pc6.jpg',
+        img: './assest/img/pc6.jpg',
         category: 'pc',
         specs: {
             'Mainboard': 'Mainboard GIGABYTE B760M GAMING PLUS WIFI DDR4',
@@ -218,7 +218,7 @@ const products = [
         brand: 'AULA',
         price: '1.490.000đ',
         oldPrice: '1.900.000đ',
-        img: '/assest/img/kb1.png',
+        img: './assest/img/kb1.png',
         category: 'keyboard',
         desc: `Với thiết kế mới lạ, chất lượng hoàn thiện cao, trải nghiệm gõ êm ái, bàn phím AULA F99 có 
         thể đáp ứng hầu hết mọi nhu cầu của người dùng phổ thông. Có thể nói, trong phân khúc giá này sản
@@ -231,7 +231,7 @@ const products = [
         brand: 'AKKO',
         price: '3.290.000đ',
         oldPrice: '4.120.000đ',
-        img: '/assest/img/kb2.png',
+        img: './assest/img/kb2.png',
         category: 'keyboard',
         desc: `AKKO MOD 007B HE PC Joy of Life một phiên bản bàn phím máy tính giới hạn được lấy cảm hứng 
         từ bộ phim cổ trang “Joy of Life".`
@@ -242,7 +242,7 @@ const products = [
         brand: 'DAREU',
         price: '590.000đ',
         oldPrice: '690.000đ',
-        img: '/assest/img/kb3.png',
+        img: './assest/img/kb3.png',
         category: 'keyboard',
         desc: `Bàn phím cơ DareU EK98L Grey Black Dream switch phân khúc tầm trung đáp ứng gần như tất cả 
         nhu cầu giải trí và làm việc, nếu không thể sở hữu những mẫu bàn phím cơ cao cấp như Asus ROG 
@@ -255,7 +255,7 @@ const products = [
         brand: 'AULA',
         price: '790.000đ',
         oldPrice: '869.000đ',
-        img: '/assest/img/kb4.png',
+        img: './assest/img/kb4.png',
         category: 'keyboard',
         desc: `Đáng giá cho những người đam mê công nghệ và game thủ. Với thiết kế nổi bật, chất liệu bền 
         bỉ và nhiều tính năng tiện ích, sản phẩm này đáp ứng tốt nhu cầu của người dùng. Nếu bạn đang tìm 
@@ -267,7 +267,7 @@ const products = [
         brand: 'RAZER',
         price: '5.390.000đ',
         oldPrice: '',
-        img: '/assest/img/kb5.png',
+        img: './assest/img/kb5.png',
         category: 'keyboard',
         desc: `Bàn phím cơ Razer BlackWidow V4 75% Phantom White Edition RGB Hotswap Razer Switch Orange 
         RZ03-05003500-R3M1 được thiết kế với layout 75% tối ưu hóa, giữ lại đầy đủ cụm phím chức năng và 
@@ -281,7 +281,7 @@ const products = [
         brand: 'LOGITECH',
         price: '410.000đ',
         oldPrice: '700.000đ',
-        img: '/assest/img/mouse5.jpg',
+        img: './assest/img/mouse5.jpg',
         category: 'mouse',
         desc: `Dù có mức giá rất bình dân nhưng Chuột Logitech G102 Lightsync RGB lại được trang bị led  RGB 16,8 triệu màu .Chọn một màu hay trộn 3 màu, 
         hiệu ứng có sẵn hay tạo hiệu ứng của riêng bạn . Sự lựa chọn là của bạn ! Bạn còn có thể đồng bộ chuột với thiết bị LIGHTSYNC của Logitech G khác 
@@ -293,7 +293,7 @@ const products = [
         brand: 'RAZER',
         price: '4.490.000đ',
         oldPrice: '',
-        img: '/assest/img/mouse1.jpg',
+        img: './assest/img/mouse1.jpg',
         category: 'mouse',
         desc: `Chuột Razer không dây Viper V4 Pro Trắng là phiên bản nâng cấp đầy ấn tượng dành cho những ai yêu thích sự tinh tế trong góc máy chơi game của mình. 
         Khác với phiên bản màu đen truyền thống, sắc trắng của mẫu chuột Razer này mang lại vẻ ngoài hiện đại, sang trọng và rất dễ phối hợp với các dàn PC mang phong 
@@ -306,7 +306,7 @@ const products = [
         brand: 'LOGITECH',
         price: '2.740.000đ',
         oldPrice: '3.190.000đ',
-        img: '/assest/img/mouse2.jpg',
+        img: './assest/img/mouse2.jpg',
         category: 'mouse',
         desc: `Chuột gaming Logitech G PRO X Superlight 2 SE là lựa chọn phù hợp cho game thủ cần một mẫu chuột không dây thuộc nhóm siêu nhẹ, mang lại cảm giác cầm nắm tự 
         nhiên cho nhiều kiểu tay và kiểu cầm khác nhau. Chuột sử dụng cảm biến HERO 2 cùng công nghệ LIGHTSPEED, hướng tới trải nghiệm điều khiển chính xác và ổn định trong 
@@ -318,7 +318,7 @@ const products = [
         brand: 'DAREU',
         price: '400.000đ',
         oldPrice: '690.000đ',
-        img: '/assest/img/mouse3.jpg',
+        img: './assest/img/mouse3.jpg',
         category: 'mouse',
         desc: `Chuột gaming không dây Dareu EM911T phiên bản trắng nổi bật với thiết kế trẻ trung, gọn nhẹ, phù hợp cho cả game thủ lẫn dân văn phòng. Chuột gaming mang mã 
         EM911T White từ Dareu, là sự kết hợp hoàn hảo giữa hiệu suất cao và tính linh hoạt kết nối, bạn có thể dễ dàng hòa nhập vào mọi setup làm việc hay giải trí.`
@@ -329,7 +329,7 @@ const products = [
         brand: 'DAREU',
         price: '700.000đ',
         oldPrice: '1.090.000đ',
-        img: '/assest/img/mouse.jpg',
+        img: './assest/img/mouse.jpg',
         category: 'mouse',
         desc: `DareU EM901X RGB Superlight sở hữu 6 nút bấm tiện lợi, trong đó có hai nút chính cực kì bền. Theo công bố của nhà sản xuất thì tuổi thọ phím lên đến 10 triệu 
         lần click. Các phím có độ nảy nhẹ do thiết kế vỏ phím thông minh. Chuột DareU EM901X sở hữu thiết kế đối xứng, kích thước trung bình, chỉ nặng khoảng 86g (bao gồm 
@@ -341,7 +341,7 @@ const products = [
         brand: 'LOGITECH',
         price: '3.490.000đ',
         oldPrice: '3.890.000đ',
-        img: '/assest/img/mouse4.png',
+        img: './assest/img/mouse4.png',
         category: 'mouse',
         desc: `Chuột Logitech G502 X PLUS White là sản phẩm mới nhất của series G502 đình đám. Được thiết kế lại và cải tiến với công nghệ chơi game hiện đại, bao gồm công 
         tắc Lightforce lai quang học - cơ học đầu tiên, Lightspeed không dây, LIGHT SYNC RGB và cảm biến quang học Hero 25K, Logitech G502 X PLUS chắc chắn là một trong 
@@ -354,7 +354,7 @@ const products = [
         brand: 'E-DRA',
         price: '2.890.000đ',
         oldPrice: '2.990.000đ',
-        img: '/assest/img/monitor1.jpg',
+        img: './assest/img/monitor1.jpg',
         category: 'monitor',
         desc: `Màn hình EDRA EGM25F260PVS 25 inch được sinh ra dành cho game thủ FPS muốn tối đa hóa tốc độ phản xạ và độ chính xác khi aim. Tấm nền FAST IPS Full HD 
         kết hợp tần số quét 260Hz  gần như xóa bỏ hoàn toàn hiện tượng ghosting, giúp mọi chuyển động trong CS2 hay Valorant đều rõ ràng, liền mạch. Kích thước 25 
@@ -366,7 +366,7 @@ const products = [
         brand: 'ViewSonic',
         price: '2.990.000đ',
         oldPrice: '3.790.000đ',
-        img: '/assest/img/monitor2.jpg',
+        img: './assest/img/monitor2.jpg',
         category: 'monitor',
         desc: `Bạn cảm thấy khó chịu với màn hình không đủ nhanh để theo kịp thao tác trong game của bạn, màn hình xảy ra tình trạng giật lag bóng mờ khiến bạn mất mạng 
         oan uổng? Đừng để tình trạng này phá hỏng quá trình chơi game của bạn. Màn hình ViewSonic VX2528, với tần số quét 180Hz và công nghệ GSync sẽ giải quyết triệt
@@ -378,7 +378,7 @@ const products = [
         brand: 'Asus TUF GAMING',
         price: '2.590.000đ',
         oldPrice: '3.990.000đ',
-        img: '/assest/img/scr.jpg',
+        img: './assest/img/scr.jpg',
         category: 'monitor',
         desc: `Khi nhu cầu gaming ngày càng nâng cao thì sự cạnh tranh và nâng cấp là điều không thể thiếu trong các sản phẩm hiện nay, đặc biệt là về màn hình máy tính. 
         Đó cũng là lúc ASUS thể hiện sự “chịu chơi” của mình với những thành phẩm ở phân khúc 24 inch. Thương hiệu chính thức mang đến model ASUS TUF Gaming VG249QE5A 
@@ -390,7 +390,7 @@ const products = [
         brand: 'MSI',
         price: '21.490.000đ',
         oldPrice: '21.990.000đ',
-        img: '/assest/img/monitor3.jpg',
+        img: './assest/img/monitor3.jpg',
         category: 'monitor',
         desc: `MSI MPG 272QRF X36 là màn hình gaming cao cấp được thiết kế dành riêng cho game thủ eSports muốn ưu tiên tốc độ, độ mượt và độ rõ chuyển động tối đa. 
         Với kích thước 27 inch, độ phân giải WQHD và tấm nền Rapid IPS, sản phẩm mang lại những khung hình sắc nét nhưng vẫn giữ được mức FPS rất cao khi kết hợp với 
@@ -402,7 +402,7 @@ const products = [
         brand: 'MSI',
         price: '14.490.000đ',
         oldPrice: '23.990.000đ',
-        img: '/assest/img/monitor4.jpg',
+        img: './assest/img/monitor4.jpg',
         category: 'monitor',
         desc: `MSI MAG 272QP QD-OLED X24 27" là màn hình gaming 27 inch sử dụng tấm nền QD‑Oled thế hệ mới, mang lại hình ảnh rực rỡ, độ đen sâu và thời gian phản hồi 
         siêu nhanh cho những người chơi game. Ngoài ra, thiết kế chống loá, góc nhìn rộng 178° và các công nghệ bảo vệ OLED giúp sản phẩm phù hợp cho gamer lẫn 
@@ -414,7 +414,7 @@ const products = [
         brand: 'AOC',
         price: '9.090.000đ',
         oldPrice: '9.690.000đ',
-        img: '/assest/img/monitor5.jpg',
+        img: './assest/img/monitor5.jpg',
         category: 'monitor',
         desc: `AOC Gaming Q27G4K là mẫu màn hình được AOC thiết kế hướng thẳng đến game thủ eSports và những ai theo đuổi trải nghiệm chơi game tốc độ cao, chính xác trong
          từng khung hình. Với kích thước 27 inch, độ phân giải QHD kết hợp với tấm nền Fast IPS, chiếc màn hình này vừa đảm bảo hình ảnh sắc nét, màu sắc sống động, vừa 
@@ -426,7 +426,7 @@ const products = [
         brand: 'AOC',
         price: '4.590.000đ',
         oldPrice: '5.490.000đ',
-        img: '/assest/img/monitor6.jpg',
+        img: './assest/img/monitor6.jpg',
         category: 'monitor',
         desc: `Màn hình gaming AOC C32G42ZE 32 inch chính là "người bạn đồng hành đáng tin cậy" cho các game thủ đam mê không gian rộng lớn và tốc độ bùng nổ. 
         Với thiết kế cong 1500R đậm chất gaming cùng tấm nền VA sống động, chiếc màn hình này mang đến trải nghiệm nhập vai tuyệt đối từ game FPS đến đua xe. 
@@ -438,7 +438,7 @@ const products = [
         brand: 'Acer',
         price: '4.690.000đ',
         oldPrice: '6.990.000đ',
-        img: '/assest/img/monitor7.jpg',
+        img: './assest/img/monitor7.jpg',
         category: 'monitor',
         desc: `Màn hình Acer KG271U W3 là một siêu phẩm nằm trong series Nitro KG1 danh tiếng, được nâng cấp mạnh mẽ để đáp ứng khát khao của những game 
         thủ yêu cầu cao về cả độ sắc nét lẫn tốc độ. Với kích thước 27 inch cùng độ phân giải 2K trên tấm nền IPS, sản phẩm mang đến chất lượng hình ảnh 
@@ -450,7 +450,7 @@ const products = [
         brand: 'LG',
         price: '40.990.000đ',
         oldPrice: '47.990.000đ',
-        img: '/assest/img/monitor8.jpg',
+        img: './assest/img/monitor8.jpg',
         category: 'monitor',
         desc: `Màn hình LG 40U990A-W là kiệt tác dành cho các creator với độ phân giải 5K2K siêu sắc nét và tần số quét 120Hz mượt mà. Tấm nền Nano IPS Black cùng độ 
         tương phản 2000:1 mang đến hình ảnh sống động, chi tiết tuyệt đối cho các tác vụ chuyên nghiệp. Với đó, bạn sẽ có không gian làm việc rộng lớn lý tưởng cho 
@@ -462,7 +462,7 @@ const products = [
         brand: 'Asus',
         price: '8.590.000đ',
         oldPrice: '9.490.000đ',
-        img: '/assest/img/monitor9.jpg',
+        img: './assest/img/monitor9.jpg',
         category: 'monitor',
         desc: `Màn hình ASUS ROG Strix XG27ACMS là lựa chọn tuyệt vời cho các game thủ với kích thước 27 inch, độ phân giải QHD sắc nét và tần số quét cực nhanh 320Hz. 
         Với đó, bạn sẽ có thể đắm chìm vào thế giới gaming mà không lo mờ nhòe hay xé hình.`
@@ -474,7 +474,7 @@ const products = [
         brand: 'Corsair',
         price: '38.590.000đ',
         oldPrice: '39.490.000đ',
-        img: '/assest/img/ram1.png',
+        img: './assest/img/ram1.png',
         category: 'ram',
         desc: `RAM CORSAIR DOMINATOR TITANIUM RGB là phiên bản được chế tạo với sự chính xác theo tiêu chuẩn cao nhất, ngoài ra tất cả các thành phần linh kiện cũng được 
         tỉ mỉ tới từng chi tiết và sản xuất với số lượng hạn chế. Mỗi 1 bộ sản phẩm đều được kiểm tra nghiêm ngặt để đảm bảo chắc chắn rằng nó có đủ 
@@ -486,7 +486,7 @@ const products = [
         brand: 'Kingmax',
         price: '4.690.000đ',
         oldPrice: '4.990.000đ',
-        img: '/assest/img/ram2.png',
+        img: './assest/img/ram2.png',
         category: 'ram',
         desc: `Kingmax Blade X 16GB DDR4 3200MHz là mô đun bộ nhớ tầm trung hướng tới người dùng yêu thích hiệu năng ổn định và thiết kế mạnh mẽ. Thanh RAM này phù hợp 
         cho PC gaming 1080p cũng như các tác vụ văn phòng đa nhiệm.`
@@ -497,7 +497,7 @@ const products = [
         brand: 'Corsair',
         price: '24.490.000đ',
         oldPrice: '31.990.000đ',
-        img: '/assest/img/ram3.png',
+        img: './assest/img/ram3.png',
         category: 'ram',
         desc: `RAM CORSAIR DOMINATOR TITANIUM RGB cũng tương thích với Intel XMP 3.0 và AMD EXPO trong việc ép xung dễ dàng, bên cạnh đó người dùng có thể tùy 
         chỉnh dễ dàng qua phần mềm iCUE và lưu lại settings cho từng ứng dụng để tăng cường tối đa khả năng sử dụng`
@@ -508,7 +508,7 @@ const products = [
         brand: 'Corsair',
         price: '5.690.000đ',
         oldPrice: '',
-        img: '/assest/img/ram4.png',
+        img: './assest/img/ram4.png',
         category: 'ram',
         desc: ``
     },
@@ -518,7 +518,7 @@ const products = [
         brand: 'Adata',
         price: '4.490.000đ',
         oldPrice: '5.490.000đ',
-        img: '/assest/img/ram5.png',
+        img: './assest/img/ram5.png',
         category: 'ram',
         desc: ``
     },
@@ -528,7 +528,7 @@ const products = [
         brand: 'Skywalker',
         price: '1.290.000đ',
         oldPrice: '1.690.000đ',
-        img: '/assest/img/ram6.png',
+        img: './assest/img/ram6.png',
         category: 'ram',
         specs: {
             'Intel XMP': 'Có',
@@ -545,7 +545,7 @@ const products = [
         brand: 'Kingston',
         price: '10.990.000đ',
         oldPrice: '',
-        img: '/assest/img/ram7.png',
+        img: './assest/img/ram7.png',
         category: 'ram',
         specs: {
             'RGB/LED': 'Có',
@@ -559,7 +559,7 @@ const products = [
         brand: 'Kingston',
         price: '890.000đ',
         oldPrice: '',
-        img: '/assest/img/ram8.png',
+        img: './assest/img/ram8.png',
         category: 'ram',
         specs: {
             'RGB/LED': 'Có',
@@ -574,7 +574,7 @@ const products = [
         brand: 'ASUS',
         price: '54.120.000đ',
         oldPrice: '',
-        img: '/assest/img/vga1.png',
+        img: './assest/img/vga1.png',
         category: 'vga',
         specs: {
             'Cổng kết nối': 'HDMI 2.1, DisplayPort 1.4a',
@@ -591,7 +591,7 @@ const products = [
         brand: 'ZOTAC',
         price: '18.990.000đ',
         oldPrice: '19.990.000đ',
-        img: '/assest/img/vga2.png',
+        img: './assest/img/vga2.png',
         category: 'vga',
         desc: `VGA ZOTAC GAMING GeForce RTX 5070 AMP White Edition là card đồ họa cao cấp toàn trắng dành cho những ai có sở thích build PC. Dựa trên kiến trúc NVIDIA 
         Blackwell, sản phẩm có thể sẵn sàng chinh phục các tựa gaming 1440p-4K. Tản nhiệt còn mang thiết kế nhỏ gọn kết hợp hệ thống làm mát IceStorm 2.0 hoàn hảo cho 
@@ -603,7 +603,7 @@ const products = [
         brand: 'ASUS',
         price: '134.990.000đ',
         oldPrice: '135.000.000đ',
-        img: '/assest/img/vga3.png',
+        img: './assest/img/vga3.png',
         category: 'vga',
         specs: {
             'Cổng kết nối': '3x DisplayPort 2.1, 2x HDMI 2.1',
@@ -620,7 +620,7 @@ const products = [
         brand: 'MSI',
         price: '199.990.000đ',
         oldPrice: '209.500.000đ',
-        img: '/assest/img/vga4.jpg',
+        img: './assest/img/vga4.jpg',
         category: 'vga',
         specs: {
             'Cổng kết nối': 'DisplayPort 2.1 x 3, HDMI 2.1 x 1, USB Type-C x 1 (Dedicated for Lightning display panel only)',
@@ -637,7 +637,7 @@ const products = [
         brand: 'Gigabyte',
         price: '33.990.000đ',
         oldPrice: '',
-        img: '/assest/img/vga5.jpg',
+        img: './assest/img/vga5.jpg',
         category: 'vga',
         desc: `Trong giai đoạn mà RTX 40 Series đang dần xưng bá trên thị trường GPU, AMD đã chờ đợi và rồi bùng nổ cùng thế hệ card màn hình mới nhất từ chính thương hiệu, 
         AMD Radeon RX 7000 Series. Cùng với đó là sự xuất hiện của 2 GPU cao cấp là RX 7900 XT và RX 7900 XTX, AMD Radeon RX 7000 Series mang đến sự cải tiến, nâng cấp và mạnh 
@@ -650,7 +650,7 @@ const products = [
         brand: 'HYPERX',
         price: '750.000đ',
         oldPrice: '1.090.000đ',
-        img: '/assest/img/hp1.jpg',
+        img: './assest/img/hp1.jpg',
         category: 'headphone',
         desc: `HyperX Cloud Earbuds II Red dòng tai nghe với nhiều cải tiếng mạnh mẽ về thiết kế, hệ thống âm thanh được xử lý chỉnh chu mang đến tai người chơi chất âm vô 
         cùng chất lượng. Hứa hẹn đây sẽ là một trong những dòng tai nghe in ear sở hữu âm thanh chất lượng và khả năng di động tiện lợi rất đáng trải nghiệm.`
@@ -661,7 +661,7 @@ const products = [
         brand: 'AKKO',
         price: '890.000đ',
         oldPrice: '1.190.000đ',
-        img: '/assest/img/ear.jpg',
+        img: './assest/img/ear.jpg',
         category: 'headphone',
         desc: `Tai nghe gaming Akko GH300 White là mẫu tai nghe không dây dành cho game thủ, phù hợp với nhiều kiểu setup máy tính khác nhau. Với thiết kế trùm tai thoải mái 
         cùng hệ thống kết nối linh hoạt, Akko GH300 White là lựa chọn đáng cân nhắc nếu bạn muốn tối giản số lượng tai nghe nhưng vẫn đảm bảo trải nghiệm âm thanh ổn định.`
@@ -672,7 +672,7 @@ const products = [
         brand: 'Logitech',
         price: '2.390.000đ',
         oldPrice: '2.790.000đ',
-        img: '/assest/img/hp2.jpg',
+        img: './assest/img/hp2.jpg',
         category: 'headphone',
         desc: `Tai nghe gaming Logitech G325 LIGHTSPEED mang đến trải nghiệm âm thanh không dây hiện đại với trọng lượng chỉ khoảng 212 g, phù hợp cho những buổi chơi game 
         kéo dài. Sản phẩm kết hợp kết nối LIGHTSPEED và Bluetooth, cho phép bạn dễ dàng dùng với PC, console hoặc điện thoại mà vẫn giữ được độ ổn định. Đây là lựa chọn phù 
@@ -685,7 +685,7 @@ const products = [
         brand: 'HyperX',
         price: '3.750.000đ',
         oldPrice: '4.190.000đ',
-        img: '/assest/img/micro.png',
+        img: './assest/img/micro.png',
         category: 'mic',
         desc: `HyperX QuadCast 2 là chiếc micro Stream cao cấp, thiết kế dành riêng cho những người sáng tạo nội dung, streamer và game thủ chuyên nghiệp. Với khả năng ghi 
         âm chất lượng phòng thu và nhiều tính năng hiện đại, chiếc Micro HyperX này giúp bạn nâng tầm trải nghiệm ghi âm và phát trực tiếp với âm thanh rõ ràng, sắc nét và 
@@ -697,7 +697,7 @@ const products = [
         brand: 'HyperX',
         price: '6.000.000đ',
         oldPrice: '',
-        img: '/assest/img/micro1.jpg',
+        img: './assest/img/micro1.jpg',
         category: 'mic',
         desc: `HyperX FlipCast là chiếc micro dynamic đa năng, vừa hỗ trợ kết nối USB, vừa có cổng XLR truyền thống, phù hợp với các streamer, podcaster và người làm nội 
         dung muốn có âm thanh chất lượng cao. Với khả năng kết nối linh hoạt, bạn có thể dễ dàng sử dụng micro cùng cả máy tính và dàn âm thanh chuyên nghiệp.`
@@ -709,7 +709,7 @@ const products = [
         brand: 'DareU',
         price: '650.000đ',
         oldPrice: '799.000đ',
-        img: '/assest/img/tc.png',
+        img: './assest/img/tc.png',
         category: 'ps',
         specs: {
             'Loại rung': 'Dual motor',
@@ -723,7 +723,7 @@ const products = [
         brand: 'Logitech',
         price: '6.930.000đ',
         oldPrice: '7.799.000đ',
-        img: '/assest/img/tc1.jpg',
+        img: './assest/img/tc1.jpg',
         category: 'ps',
         specs: {
             'Loại rung': 'Dual motor',
@@ -737,7 +737,7 @@ const products = [
         brand: 'Sony',
         price: '1.990.000đ',
         oldPrice: '',
-        img: '/assest/img/tc2.jpg',
+        img: './assest/img/tc2.jpg',
         category: 'ps',
         specs: {
             'Loại rung': 'Haptic Feedback',
@@ -754,7 +754,7 @@ const products = [
         brand: 'Microsoft',
         price: '1.600.000đ',
         oldPrice: '1.990.000đ',
-        img: '/assest/img/tc3.jpg',
+        img: './assest/img/tc3.jpg',
         category: 'ps',
         specs: {
             'Loại rung': 'Dual motor, Impulse Triggers',
