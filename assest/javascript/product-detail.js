@@ -46,7 +46,7 @@ if (!product) {
 
     function relatedCardHtml(p) {
         return `
-            <div class="product-card" data-id="${p.id}">
+            <a href="product.html?id=${p.id}" class="product-card" data-id="${p.id}">
                 <div class="product-card__img-wrap">
                     <img src="${p.img}" alt="" class="product-card__img">
                 </div>
@@ -59,7 +59,7 @@ if (!product) {
                     </div>
                     <button class="product-card__btn">Thêm Vào Giỏ</button>
                 </div>
-            </div>`;
+            </a>`;
     }
 
     const related = products.filter(p => p.category === product.category && p.id !== id);
