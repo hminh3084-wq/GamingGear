@@ -74,3 +74,23 @@ function renderCart() {
 }
 
 renderCart();
+
+const cartheaderBtn = document.querySelector('.header__cart');
+
+const isTouch =
+    window.matchMedia('(hover: none)').matches ||
+    navigator.maxTouchPoints > 0;
+
+if (isTouch) {
+    cartheaderBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        cartheaderBtn.classList.toggle('active');
+    });
+
+
+document.addEventListener('click', (e) => {
+    if (!cartheaderBtn.contains(e.target)) {
+      cartheaderBtn.classList.remove('active');
+    }
+  });
+}
