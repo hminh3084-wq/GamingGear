@@ -83,6 +83,7 @@ const isTouch =
 
 if (isTouch) {
     cartheaderBtn.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
         e.preventDefault();
         cartheaderBtn.classList.toggle('active');
     });
