@@ -14,7 +14,7 @@ qtyBtns[1].addEventListener('click', () => {
 });
 
 if (!product) {
-    window.location.href = './index.html';
+    window.location.href = new URL("index.html", window.location.href).href;
 } else {
     document.querySelector('.product-detail__img').src = product.img;
     document.querySelector('.product-detail__name').textContent = product.name;
@@ -45,8 +45,12 @@ if (!product) {
     const nextBtn = document.querySelector('.product-related .product-section__btn--next');
 
     function relatedCardHtml(p) {
+        
+        const url = new URL("product.html", window.location.href);
+        url.searchParams.set("id", p.id);
+
         return `
-            <div class="product-card" data-id="${p.id}">
+            <a href="${url.href}" class="product-card" data-id="${p.id}">
                 <div class="product-card__img-wrap">
                     <img src="${p.img}" alt="" class="product-card__img">
                 </div>
@@ -57,9 +61,8 @@ if (!product) {
                         <span class="product-card__price-current">${p.price}</span>
                         ${p.oldPrice ? `<span class="product-card__price-old">${p.oldPrice}</span>` : ''}
                     </div>
-                    <button class="product-card__btn">Thêm Vào Giỏ</button>
                 </div>
-            </div>`;
+            </a>`;
     }
 
     const related = products.filter(p => p.category === product.category && p.id !== id);
@@ -81,7 +84,6 @@ if (!product) {
                 return;
             }
             const card = e.target.closest('.product-card');
-            if (card) window.location.href = `./product.html?id=${card.dataset.id}`;
         });
 
         if (related.length < 4) {
