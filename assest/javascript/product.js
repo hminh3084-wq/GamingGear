@@ -74,7 +74,7 @@ document.querySelectorAll('.product-card').forEach(card => {
   const id = card.dataset.id;
   card.style.cursor = 'pointer';
   card.addEventListener('click', () => {
-    window.location.href = `/product.html?id=${id}`;
+    window.location.href = `product.html?id=${id}`;
   });
 });
 
