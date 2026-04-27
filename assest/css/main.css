@@ -215,7 +215,13 @@
     height: 8px;
 }
 
-.header__cart:hover .header__cart-dropdown {
+@media (hover: hover) and (pointer: fine) {
+    .header__cart:hover .header__cart-dropdown {
+        display: block;
+    }
+}
+
+.header__cart.active .header__cart-dropdown {
     display: block;
 }
 
