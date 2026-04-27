@@ -31,7 +31,7 @@
 
         container.querySelectorAll('.product-card').forEach(card => {
             card.addEventListener('click', () => {
-                window.location.href = `/product.html?id=${card.dataset.id}`;
+                window.location.href = `product.html?id=${card.dataset.id}`;
             });
 
             const addBtn = card.querySelector('.product-card__btn');
