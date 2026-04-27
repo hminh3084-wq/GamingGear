@@ -45,11 +45,12 @@ if (!product) {
     const nextBtn = document.querySelector('.product-related .product-section__btn--next');
 
     function relatedCardHtml(p) {
-        
-        const basePath = window.location.pathname.replace(/\/[^\/]*$/, "/");
+        const productUrl = new URL("product.html", window.location.href);
+        productUrl.searchParams.set("id", p.id);
+
 
         return `
-            <a href="${basePath}product.html?id=${p.id}" class="product-card" data-id="${p.id}">
+            <a href="${productUrl.href}product.html?id=${p.id}" class="product-card" data-id="${p.id}">
                 <div class="product-card__img-wrap">
                     <img src="${p.img}" alt="" class="product-card__img">
                 </div>
