@@ -614,6 +614,7 @@
     overflow: hidden;
     cursor: pointer;
     transition: box-shadow .2s, border-color .2s;
+    text-decoration: none;
 }
 
 .product-card:hover {
