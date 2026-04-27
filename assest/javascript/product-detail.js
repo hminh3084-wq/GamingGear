@@ -45,8 +45,11 @@ if (!product) {
     const nextBtn = document.querySelector('.product-related .product-section__btn--next');
 
     function relatedCardHtml(p) {
+        const url = new URL("product.html", window.location.href);
+        url.searchParams.set("id", p.id);
+
         return `
-            <div class="product-card" data-id="${p.id}">
+            <a href="${url.href}" class="product-card" data-id="${p.id}">
                 <div class="product-card__img-wrap">
                     <img src="${p.img}" alt="" class="product-card__img">
                 </div>
@@ -58,7 +61,7 @@ if (!product) {
                         ${p.oldPrice ? `<span class="product-card__price-old">${p.oldPrice}</span>` : ''}
                     </div>
                 </div>
-            </div>`;
+            </a>`;
     }
 
     const related = products.filter(p => p.category === product.category && p.id !== id);
