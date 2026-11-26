@@ -214,8 +214,13 @@
     right: 0;
     height: 8px;
 }
+@media (hover: hover) and (pointer: fine) {
+    .header__cart:hover .header__cart-dropdown {
+        display: block;
+    }
+}
 
-.header__cart:hover .header__cart-dropdown {
+.header__cart.active .header__cart-dropdown {
     display: block;
 }
 
@@ -593,6 +598,11 @@
     color: var(--primary-color);
 }
 
+/* Giới hạn kích thước card trong slider — ngăn card dãn to khi track có ít sản phẩm */
+.product-slider__track .product-card {
+    max-width: calc(25% - 9px);
+}
+
 /* Slider */
 .product-slider {
     overflow: hidden;
@@ -614,6 +624,7 @@
     overflow: hidden;
     cursor: pointer;
     transition: box-shadow .2s, border-color .2s;
+    text-decoration: none;
 }
 
 .product-card:hover {
@@ -622,13 +633,20 @@
 }
 
 .product-card__img-wrap {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    box-sizing: border-box;
 }
 
 .product-card__img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .product-card__info {

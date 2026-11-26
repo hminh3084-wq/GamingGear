@@ -1,0 +1,326 @@
+/* ══════════════════════════════════════════
+   Trang tra cứu đơn hàng
+══════════════════════════════════════════ */
+.tracking-page {
+    padding: 24px 0 48px;
+    background: var(--gray-color);
+    min-height: 70vh;
+}
+
+.tracking-page__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0 0 20px;
+}
+
+/* ── Panel tìm kiếm ── */
+.tracking-search {
+    background: var(--white-color);
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+}
+
+.tracking-search__row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.tracking-search__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 160px;
+}
+
+.tracking-search__label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.tracking-search__input {
+    height: 42px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 14px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+}
+
+.tracking-search__input:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.12);
+}
+
+.tracking-search__btn {
+    height: 42px;
+    padding: 0 28px;
+    background: #1a73e8;
+    color: var(--white-color);
+    border: none;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: filter 0.15s;
+    flex-shrink: 0;
+}
+
+.tracking-search__btn:hover {
+    filter: brightness(1.1);
+}
+
+.tracking-search__error {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-top: 8px;
+    min-height: 1.8rem;
+}
+
+/* ── Panel kết quả ── */
+.tracking-result {
+    background: var(--white-color);
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 24px;
+}
+
+.tracking-result[hidden] {
+    display: none !important;
+}
+
+/* Header đơn hàng */
+.tracking-result__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tracking-result__code {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.tracking-result__date {
+    font-size: 1.3rem;
+    color: #888;
+}
+
+/* ── Timeline trạng thái ── */
+.tracking-timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    position: relative;
+}
+
+/* Đường kẻ nối */
+.tracking-timeline::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    height: 3px;
+    background: #e0e0e0;
+    z-index: 0;
+}
+
+.tracking-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.tracking-step__dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    border: 3px solid #e0e0e0;
+    transition: background 0.3s, border-color 0.3s;
+    position: relative;
+}
+
+/* Đường kẻ tiến trình (màu xanh) */
+.tracking-step__line {
+    position: absolute;
+    top: 14px;
+    left: calc(50% + 14px);
+    right: calc(-50% + 14px);
+    height: 3px;
+    background: #e0e0e0;
+    z-index: 0;
+    transition: background 0.3s;
+}
+
+.tracking-step:last-child .tracking-step__line {
+    display: none;
+}
+
+/* Step đã hoàn thành */
+.tracking-step.done .tracking-step__dot {
+    background: #1a73e8;
+    border-color: #1a73e8;
+}
+
+.tracking-step.done .tracking-step__line {
+    background: #1a73e8;
+}
+
+/* Step hiện tại */
+.tracking-step.active .tracking-step__dot {
+    background: #1a73e8;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.2);
+}
+
+.tracking-step__label {
+    font-size: 1.3rem;
+    color: #999;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.tracking-step.done .tracking-step__label,
+.tracking-step.active .tracking-step__label {
+    color: #1a73e8;
+    font-weight: 600;
+}
+
+/* ── Bảng sản phẩm ── */
+.tracking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    font-size: 1.4rem;
+}
+
+.tracking-table th {
+    background: #eef2fb;
+    color: var(--text-color);
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid #dde4f5;
+}
+
+.tracking-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid #f0f0f0;
+    color: var(--text-color);
+}
+
+.tracking-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ── Footer đơn hàng ── */
+.tracking-result__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 14px;
+    border-top: 1px solid #eee;
+}
+
+.tracking-result__receiver {
+    font-size: 1.4rem;
+    color: #555;
+}
+
+.tracking-result__total {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* ══════════════════════════════════════════
+   Responsive
+══════════════════════════════════════════ */
+@media (max-width: 739px) {
+    .tracking-search__row {
+        flex-direction: column;
+    }
+    .tracking-search__btn {
+        width: 100%;
+    }
+    .tracking-step__label {
+        font-size: 1.1rem;
+    }
+    .tracking-result__header {
+        flex-direction: column;
+    }
+}
+
+/* ── Nhiều đơn hàng ── */
+.tracking-divider {
+    border: none;
+    border-top: 1px dashed #ddd;
+    margin: 24px 0;
+}
+
+.tracking-order-card {
+    padding-bottom: 4px;
+}
+
+/* ── Chưa có đơn hàng ── */
+.tracking-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 16px;
+    gap: 12px;
+    text-align: center;
+}
+
+.tracking-empty__icon {
+    font-size: 4.8rem;
+    color: #ccc;
+}
+
+.tracking-empty__text {
+    font-size: 1.5rem;
+    color: #999;
+    margin: 0;
+}
+
+.tracking-empty__link {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 8px 24px;
+    background: #1a73e8;
+    color: var(--white-color);
+    border-radius: 6px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: filter 0.15s;
+}
+
+.tracking-empty__link:hover {
+    filter: brightness(1.1);
+}

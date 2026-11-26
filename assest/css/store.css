@@ -1,52 +1,387 @@
-.store-detail {
-    margin-top: 16px;
+/* ══════════════════════════════════════════
+   Breadcrumb
+══════════════════════════════════════════ */
+.store-breadcrumb {
+    background: var(--white-color);
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
 }
 
-.store-detail .row {
+.store-breadcrumb__text {
+    font-size: 1.3rem;
+    color: #666;
     display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
+    align-items: center;
+    gap: 6px;
 }
 
-.store-detail .row > [class*="col"] {
-    display: flex;
+.store-breadcrumb__link {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
-.store-detail__card {
+.store-breadcrumb__link:hover {
+    text-decoration: underline;
+}
+
+.store-breadcrumb__sep {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+.store-breadcrumb__current {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* ══════════════════════════════════════════
+   Layout
+══════════════════════════════════════════ */
+.store-layout {
+    padding: 16px 0 40px;
+    background-color: var(--gray-color);
+    min-height: 60vh;
+}
+
+/* ══════════════════════════════════════════
+   Sidebar / Bộ lọc
+══════════════════════════════════════════ */
+.store-filter {
+    background: var(--white-color);
     border: 1px solid #eee;
-    background-color: var(--white-color);
-    margin-top: 8px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    border-radius: 8px;
+    padding: 16px;
+    position: sticky;
+    top: calc(var(--header-height) + 8px);
 }
 
-.store-detail__card .product-card__info {
+.store-filter__heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.store-filter__group {
+    margin-bottom: 20px;
+}
+
+.store-filter__group-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 10px;
+}
+
+.store-filter__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
+    gap: 8px;
+}
+
+.store-filter__item {
+    display: flex;
+    align-items: center;
+}
+
+/* Checkbox label */
+.store-filter__check-label,
+.store-filter__radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    cursor: pointer;
+    user-select: none;
+}
+
+.store-filter__check-label:hover,
+.store-filter__radio-label:hover {
+    color: var(--primary-color);
+}
+
+.store-filter__checkbox,
+.store-filter__radio {
+    accent-color: var(--primary-color);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Giá tùy chỉnh */
+.store-filter__price-custom {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.store-filter__price-input {
     flex: 1;
-    padding: 12px;
+    height: 32px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0 8px;
+    font-size: 1.3rem;
+    outline: none;
+    min-width: 0;
 }
 
-.store-detail__card .product-card__name {
-    flex: 1;   
+.store-filter__price-input:focus {
+    border-color: var(--primary-color);
 }
 
-.store-detail__img-wrap {
-    width: 100%;          
-    height: 180px;
+.store-filter__price-sep {
+    font-size: 1.3rem;
+    color: #999;
+    flex-shrink: 0;
+}
+
+/* Nút áp dụng / xóa */
+.store-filter__apply-btn {
+    display: block;
+    width: 100%;
+    height: 36px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: filter 0.15s;
+}
+
+.store-filter__apply-btn:hover {
+    filter: brightness(1.1);
+}
+
+.store-filter__reset-btn {
+    display: block;
+    width: 100%;
+    height: 36px;
+    background: var(--white-color);
+    color: var(--text-color);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.store-filter__reset-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* ══════════════════════════════════════════
+   Khu vực chính (store-main)
+══════════════════════════════════════════ */
+.store-main {
+    background: var(--white-color);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+/* ── Toolbar ── */
+.store-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.store-toolbar__count {
+    font-size: 1.4rem;
+    color: #555;
+}
+
+.store-toolbar__count-num {
+    color: var(--primary-color);
+}
+
+.store-toolbar__sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.store-toolbar__sort-label {
+    font-size: 1.3rem;
+    color: #666;
+    white-space: nowrap;
+}
+
+.store-toolbar__sort-select {
+    height: 32px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0 8px;
+    font-size: 1.3rem;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.store-toolbar__sort-select:focus {
+    border-color: var(--primary-color);
+}
+
+/* ── Grid 4 cột ── */
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+/* ── Card ── */
+.store-card {
+    min-width: 0;        /* reset min-width từ .product-card để grid 4 cột hoạt động đúng */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--white-color);
+    transition: box-shadow 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.store-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.store-card__img-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    padding: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #fafafa;
 }
 
-.store-detail__img-wrap img {
+.store-card__img-wrap img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
 }
 
+.store-card .product-card__info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px 12px 12px;
+}
 
+.store-card .product-card__name {
+    flex: 1;
+}
 
+/* Nút luôn hiện trên store (không ẩn hover) */
+.store-card .product-card__btn {
+    opacity: 1;
+    transform: none;
+    margin-top: auto;
+}
+
+.store-card .product-card__btn:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* ── Empty state ── */
+.store-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 48px 0;
+    font-size: 1.5rem;
+    color: #999;
+}
+
+/* ══════════════════════════════════════════
+   Phân trang
+══════════════════════════════════════════ */
+.store-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.store-page__btn {
+    min-width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    background: var(--white-color);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+}
+
+.store-page__btn:hover:not([disabled]):not(.store-page__btn--active) {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.store-page__btn--active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.store-page__btn[disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.store-page__btn--arrow i {
+    font-size: 1.1rem;
+}
+
+/* ══════════════════════════════════════════
+   Responsive
+══════════════════════════════════════════ */
+@media (max-width: 1023px) {
+    .store-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .store-filter {
+        position: static;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 739px) {
+    .store-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -88,6 +88,9 @@
     .product-card{
         min-width: calc((100% - 24px) / 3);
     }
+    .product-slider__track .product-card {
+        max-width: calc((100% - 24px) / 3);
+    }
 
     .product-card__img-wrap{
         width: 100%;
@@ -129,6 +132,9 @@
 
    .product-card{
         min-width: calc((100% - 12px) / 2);
+    }
+    .product-slider__track .product-card {
+        max-width: calc((100% - 12px) / 2);
     }
     .product-card__img-wrap{
         width: 100%;

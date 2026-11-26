@@ -1,54 +1,75 @@
-const params = new URLSearchParams(window.location.search);
-const id = parseInt(params.get('id'));
-const product = products.find(p => p.id === id);
+/**
+ * product-detail.js — Lấy chi tiết sản phẩm từ API
+ */
+const urlParams = new URLSearchParams(window.location.search);
+const productId = parseInt(urlParams.get('id'));
+
+if (!productId) {
+    window.location.href = 'index.html';
+}
 
 const qtyInput = document.querySelector('.product-detail__qty-input');
-const qtyBtns = document.querySelectorAll('.product-detail__qty-btn');
+const qtyBtns  = document.querySelectorAll('.product-detail__qty-btn');
 
-qtyBtns[0].addEventListener('click', () => {
-    if (qtyInput.value > 1) qtyInput.value--;
-});
+qtyBtns[0]?.addEventListener('click', () => { if (qtyInput.value > 1) qtyInput.value--; });
+qtyBtns[1]?.addEventListener('click', () => { qtyInput.value++; });
 
-qtyBtns[1].addEventListener('click', () => {
-    qtyInput.value++;
-});
+async function loadProduct() {
+    try {
+        const res = await fetch(`/api/products/${productId}`);
+        if (!res.ok) { window.location.href = 'index.html'; return; }
+        const product = await res.json();
 
-if (!product) {
-    window.location.href = './index.html';
-} else {
-    document.querySelector('.product-detail__img').src = product.img;
-    document.querySelector('.product-detail__name').textContent = product.name;
-    document.querySelector('.product-detail__brand a').textContent = product.brand;
-    document.querySelector('.product-detail__price-current').textContent = product.price;
-    document.querySelector('.product-detail__price-old').textContent = product.oldPrice;
+        // Thông tin chính
+        document.querySelector('.product-detail__img').src                = product.img;
+        document.querySelector('.product-detail__name').textContent       = product.name;
+        document.querySelector('.product-detail__brand a').textContent    = product.brand;
+        document.querySelector('.product-detail__price-current').textContent = product.price;
+        document.querySelector('.product-detail__price-old').textContent  = product.oldPrice || '';
+        document.title = product.name + ' - LuisGaf Store';
 
-    const descEl = document.querySelector('.product-desc__content');
-    if (product.specs) {
-        let html = '<table class="product-specs">';
-        for (const [key, value] of Object.entries(product.specs)) {
-            html += `
-                <tr class="product-specs__row">
-                    <td class="product-specs__key">${key}</td>
-                    <td class="product-specs__value">${value}</td>
-                </tr>`;
-        }
-        html += '</table>';
-        descEl.innerHTML = html;
-    } else {
-        descEl.textContent = product.desc;
+        // Mô tả
+        const descEl = document.querySelector('.product-desc__content');
+        descEl.textContent = product.desc || 'Chưa có mô tả.';
+
+        // Nút thêm vào giỏ
+        document.querySelector('.product-detail__btn--cart').addEventListener('click', () => {
+            addToCart(product, parseInt(qtyInput.value, 10) || 1);
+        });
+
+        // Nút mua ngay
+        document.querySelector('.product-detail__btn--buy').addEventListener('click', () => {
+            addToCart(product, parseInt(qtyInput.value, 10) || 1);
+            window.location.href = 'checkout.html';
+        });
+
+        // Sản phẩm liên quan
+        await loadRelated(product);
+
+    } catch (err) {
+        console.error('Lỗi tải sản phẩm:', err);
+        window.location.href = 'index.html';
     }
+}
 
+async function loadRelated(product) {
     const relatedSection = document.querySelector('.product-related');
-    const track = document.querySelector('.product-related .product-slider__track');
-    const relatedNav = document.querySelector('.product-related .product-section__nav');
-    const prevBtn = document.querySelector('.product-related .product-section__btn--prev');
-    const nextBtn = document.querySelector('.product-related .product-section__btn--next');
+    const track          = document.querySelector('.product-related .product-slider__track');
+    const relatedNav     = document.querySelector('.product-related .product-section__nav');
+    const prevBtn        = document.querySelector('.product-related .product-section__btn--prev');
+    const nextBtn        = document.querySelector('.product-related .product-section__btn--next');
 
-    function relatedCardHtml(p) {
-        return `
-            <a href="product.html?id=${p.id}" class="product-card" data-id="${p.id}">
+    try {
+        const res     = await fetch(`/api/products?category=${encodeURIComponent(product.category)}`);
+        const all     = await res.json();
+        const related = all.filter(p => p.id !== productId);
+
+        if (!related.length) { relatedSection.style.display = 'none'; return; }
+
+        track.innerHTML = related.map(p => `
+            <div class="product-card" data-id="${p.id}" style="cursor:pointer">
                 <div class="product-card__img-wrap">
-                    <img src="${p.img}" alt="" class="product-card__img">
+                    <img src="${p.img}" alt="${p.name}" class="product-card__img" loading="lazy">
                 </div>
                 <div class="product-card__info">
                     <span class="product-card__brand">${p.brand}</span>
@@ -59,127 +80,47 @@ if (!product) {
                     </div>
                     <button class="product-card__btn">Thêm Vào Giỏ</button>
                 </div>
-            </a>`;
-    }
+            </div>`).join('');
 
-    const related = products.filter(p => p.category === product.category && p.id !== id);
-
-    if (related.length === 0) {
-        relatedSection.style.display = 'none';
-    } else {
-        track.innerHTML = related.map(relatedCardHtml).join('');
-
-        track.addEventListener('click', e => {
-            const addBtn = e.target.closest('.product-card__btn');
-            if (addBtn) {
-                e.preventDefault();
-                const card = addBtn.closest('.product-card');
-                if (card) {
-                    const relProduct = products.find(p => p.id === parseInt(card.dataset.id, 10));
-                    if (relProduct) addToCart(relProduct, 1);
-                }
-                return;
-            }
-            const card = e.target.closest('.product-card');
-            if (card) window.location.href = `./product.html?id=${card.dataset.id}`;
+        track.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', () => window.location.href = `product.html?id=${card.dataset.id}`);
+            card.querySelector('.product-card__btn').addEventListener('click', e => {
+                e.stopPropagation();
+                const p = related.find(x => x.id === parseInt(card.dataset.id, 10));
+                if (p) addToCart(p, 1);
+            });
         });
 
-        if (related.length < 4) {
-            if (relatedNav) relatedNav.style.display = 'none';
-            track.style.transform = '';
-            track.style.transition = '';
-        } else {
-            if (relatedNav) relatedNav.style.display = '';
-
-            function measure() {
-                const firstCard = track.querySelector('.product-card');
-                if (!firstCard) return null;
-
-                const cardW = firstCard.getBoundingClientRect().width;
-                const styles = getComputedStyle(track);
-                const gap = parseFloat(styles.gap || styles.columnGap || '0') || 0;
-
-                const viewport = track.parentElement; // .product-slider
-                const viewportW = viewport.getBoundingClientRect().width;
-
-                const cardsPerView = Math.max(1, Math.round(viewportW / cardW));
-                const step = cardW + gap;
-
-                return { step, cloneCount: cardsPerView };
-            }
-
-            function setTransform(step, i) {
-                track.style.transform = `translateX(-${i * step}px)`;
-            }
-
-            let m = measure();
-            if (!m) {
-                if (relatedNav) relatedNav.style.display = 'none';
-                track.style.transform = '';
-                track.style.transition = '';
-            } else {
-                let step = m.step;
-                let cloneCount = m.cloneCount;
-
-                const originals = Array.from(track.children);
-
-                function buildClones() {
-                    track.innerHTML = originals.map(el => el.outerHTML).join('');
-                    const firstCards = Array.from(track.children).slice(0, cloneCount);
-                    firstCards.forEach(card => track.appendChild(card.cloneNode(true)));
-                    const lastCards = Array.from(track.children).slice(-cloneCount - cloneCount, -cloneCount);
-                    lastCards.forEach(card => track.insertBefore(card.cloneNode(true), track.firstChild));
-                }
-                buildClones();
-
-                let index = cloneCount;
-                track.style.transition = 'none';
-                setTransform(step, index);
-
-                function slideTo(i) {
-                    index = i;
-                    track.style.transition = 'transform .4s ease';
-                    setTransform(step, index);
-                }
-
-                track.addEventListener('transitionend', () => {
-                    const total = track.children.length;
-                    if (index >= total - cloneCount) {
-                        index = cloneCount;
-                        track.style.transition = 'none';
-                        setTransform(step, index);
-                    }
-                    if (index < cloneCount) {
-                        index = total - cloneCount * 2;
-                        track.style.transition = 'none';
-                        setTransform(step, index);
-                    }
-                });
-
-                prevBtn.onclick = () => slideTo(index - 1);
-                nextBtn.onclick = () => slideTo(index + 1);
-
-                window.addEventListener('resize', () => {
-                    requestAnimationFrame(() => {
-                    const nm = measure();
-                    if (!nm) return;
-                    step = nm.step;
-                    const newCloneCount = nm.cloneCount;
-                    if (newCloneCount !== cloneCount) {
-                        cloneCount = newCloneCount;
-                        buildClones();
-                        index = cloneCount;
-                    }
-                    track.style.transition = 'none';
-                    setTransform(step, index);
-                    });
-                });
-            }
+        // Slider
+        let sliderIndex = 0;
+        function measure() {
+            const firstCard = track.querySelector('.product-card');
+            if (!firstCard) return null;
+            const cardW = firstCard.getBoundingClientRect().width;
+            if (!cardW) return null;
+            const gap       = parseFloat(getComputedStyle(track).gap || '0') || 0;
+            const viewportW = track.parentElement.getBoundingClientRect().width;
+            const visible   = Math.max(1, Math.round(viewportW / cardW));
+            return { step: cardW + gap, maxIndex: Math.max(0, related.length - visible), visible };
         }
-    }
+        function syncSlider() {
+            const m = measure();
+            if (!m) return;
+            sliderIndex = Math.min(Math.max(0, sliderIndex), m.maxIndex);
+            track.style.transform = `translateX(-${sliderIndex * m.step}px)`;
+            if (prevBtn) prevBtn.disabled = sliderIndex === 0;
+            if (nextBtn) nextBtn.disabled = sliderIndex === m.maxIndex;
+            if (relatedNav) relatedNav.style.display = m.maxIndex === 0 ? 'none' : '';
+        }
+        if (prevBtn) prevBtn.onclick = () => { const m = measure(); if (!m) return; sliderIndex = Math.max(0, sliderIndex - 1); track.style.transform = `translateX(-${sliderIndex * m.step}px)`; prevBtn.disabled = sliderIndex === 0; nextBtn.disabled = sliderIndex === measure()?.maxIndex; };
+        if (nextBtn) nextBtn.onclick = () => { const m = measure(); if (!m) return; sliderIndex = Math.min(m.maxIndex, sliderIndex + 1); track.style.transform = `translateX(-${sliderIndex * m.step}px)`; prevBtn.disabled = sliderIndex === 0; nextBtn.disabled = sliderIndex === m.maxIndex; };
+        requestAnimationFrame(syncSlider);
+        window.addEventListener('resize', () => requestAnimationFrame(syncSlider));
 
-    document.querySelector('.product-detail__btn--cart').addEventListener('click', () => {
-        const qty = parseInt(document.querySelector('.product-detail__qty-input').value);
-        addToCart(product, qty);
-    });
+    } catch (err) {
+        console.error('Lỗi tải sản phẩm liên quan:', err);
+        relatedSection.style.display = 'none';
+    }
 }
+
+loadProduct();

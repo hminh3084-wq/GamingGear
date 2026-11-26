@@ -45,7 +45,7 @@
                                 <span class="header__utils-value">1800.6301</span>
                             </div>
                         </a>
-                        <a href="" class="header__utils-item">
+                        <a href="order-tracking.html" class="header__utils-item">
                             <i class="fa-solid fa-file-lines"></i>
                             <div class="header__utils-info">
                                 <span class="header__utils-label">Tra cứu</span>
@@ -189,10 +189,83 @@
             </ul>
         </div>
 
-        <div class="store-detail">
+        <!-- Breadcrumb -->
+        <div class="store-breadcrumb">
+            <div class="grid wide">
+                <span class="store-breadcrumb__text">
+                    <a href="index.html" class="store-breadcrumb__link">Trang chủ</a>
+                    <i class="fa-solid fa-chevron-right store-breadcrumb__sep"></i>
+                    <span class="store-breadcrumb__current">Tất cả sản phẩm</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="store-layout">
             <div class="grid wide">
                 <div class="row">
-                   
+                    <!-- Sidebar bộ lọc -->
+                    <div class="col l-2 m-3 c-12">
+                        <aside class="store-filter">
+                            <h3 class="store-filter__heading">BỘ LỌC</h3>
+
+                            <!-- Thương hiệu -->
+                            <div class="store-filter__group" id="filter-brand-group">
+                                <h4 class="store-filter__group-title">Thương hiệu</h4>
+                                <ul class="store-filter__list" id="brand-list">
+                                    <!-- Render bởi JS -->
+                                </ul>
+                            </div>
+
+                            <!-- Khoảng giá radio -->
+                            <div class="store-filter__group">
+                                <h4 class="store-filter__group-title">Khoảng giá</h4>
+                                <ul class="store-filter__list" id="price-range-list">
+                                    <!-- Render động bởi JS theo giá thực tế sản phẩm -->
+                                </ul>
+
+                                <!-- Giá tùy chỉnh -->
+                                <div class="store-filter__price-custom">
+                                    <input type="number" class="store-filter__price-input" id="price-min" placeholder="Từ" min="0">
+                                    <span class="store-filter__price-sep">—</span>
+                                    <input type="number" class="store-filter__price-input" id="price-max" placeholder="Đến" min="0">
+                                </div>
+                            </div>
+
+                            <button class="store-filter__apply-btn" id="apply-filter">Áp dụng</button>
+                            <button class="store-filter__reset-btn" id="reset-filter">Xóa bộ lọc</button>
+                        </aside>
+                    </div>
+
+                    <!-- Khu vực sản phẩm -->
+                    <div class="col l-10 m-9 c-12">
+                        <div class="store-main">
+                            <!-- Toolbar -->
+                            <div class="store-toolbar">
+                                <span class="store-toolbar__count">
+                                    Tìm thấy <strong class="store-toolbar__count-num">0</strong> sản phẩm
+                                </span>
+                                <div class="store-toolbar__sort">
+                                    <label class="store-toolbar__sort-label">Sắp xếp:</label>
+                                    <select class="store-toolbar__sort-select" id="sort-select">
+                                        <option value="default">Mặc định</option>
+                                        <option value="price-asc">Giá tăng dần</option>
+                                        <option value="price-desc">Giá giảm dần</option>
+                                        <option value="name-asc">Tên A → Z</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Grid sản phẩm -->
+                            <div class="store-grid" id="store-grid">
+                                <!-- Render bởi JS -->
+                            </div>
+
+                            <!-- Phân trang -->
+                            <div class="store-pagination" id="store-pagination">
+                                <!-- Render bởi JS -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -205,7 +278,7 @@
                             <img src="./assest/img/logo_header.png" alt="" class="footer__logo-img">
                             <span class="footer__logo-name">LuisGaf Store</span>
                         </a>
-                        <p class="footer__desc">Đồ án cuối kì môn thực hành nhập môn web</p>
+                        <p class="footer__desc">Thực tập chuyên ngành/p>
                     </div>
         
                     <div class="col l-4 m-4 c-12">
@@ -409,7 +482,6 @@
         </nav>
     </div>
     <div class="category-overlay"></div>
-    <script src="./assest/javascript/data.js"></script>
     <script src="./assest/javascript/cart.js"></script>
     <script src="./assest/javascript/category.js"></script>
     <script src="./assest/javascript/menu-category.js"></script>

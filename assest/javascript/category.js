@@ -14,7 +14,9 @@
             document.querySelector('.app__container .grid') ||
             document.querySelector('.product-detail > .grid.wide') ||
             document.querySelector('.cart-detail > .grid.wide') ||
-            document.querySelector('.store-detail > .grid.wide')
+            document.querySelector('.store-detail > .grid.wide') ||
+            document.querySelector('.store-layout > .grid.wide') ||
+            document.querySelector('.grid.wide')
         );
     }
 

@@ -117,6 +117,7 @@
         checkoutBtn.addEventListener('click', () => {
             const cart = getCart();
             if (cart.length === 0) return;
+            window.location.href = 'checkout.html';
         });
     }
 
